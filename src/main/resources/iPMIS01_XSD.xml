@@ -1,0 +1,292 @@
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="message">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="message_header"/>
+				<xs:element ref="message_body"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="message_header">
+		<xs:complexType>
+			<xs:all>
+				<xs:element ref="sender"/>
+				<xs:element ref="receiver"/>
+				<xs:element ref="module"/>
+				<xs:element ref="action"/>
+				<xs:element ref="information"/>
+				<xs:element ref="message_hash"/>
+				<xs:element ref="message_version"/>
+				<xs:element ref="message_date"/>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="message_body">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="eml"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="eml">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="eml_header"/>
+				<xs:element ref="eml_body"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="eml_header">
+		<xs:complexType>
+			<xs:all>
+				<xs:element ref="third_party_list_ref"/>
+				<xs:element ref="third_party_issue_date"/>
+				<xs:element ref="impl_agency"/>
+				<xs:element ref="exemption_channel"/>
+				<xs:element ref="effective_date"/>
+				<xs:element ref="expiry_date"/>
+				<xs:element ref="tin"/>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="eml_body">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="items"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="items">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element maxOccurs="unbounded" minOccurs="1" ref="item"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="item">
+		<xs:complexType>
+			<xs:all>
+				<xs:element ref="item_num"/>
+				<xs:element ref="hs_code"/>
+				<xs:element ref="item_desc"/>
+				<xs:element ref="measure_unit"/>
+				<xs:element ref="unit_num"/>
+				<xs:element ref="unit_currency"/>
+				<xs:element ref="unit_value"/>
+				<xs:element ref="is_im_duty_exm"/>
+				<xs:element ref="duty_percent_exempted"/>
+				<xs:element ref="is_vat_exm"/>
+				<xs:element ref="is_excise_exm"/>
+				<xs:element ref="is_idf_exempt"/>
+				<xs:element ref="is_rdl_exempt"/>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="module" nillable="false">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:maxLength value="50"/>
+				<xs:minLength value="1"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="sender" nillable="false">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:maxLength value="50"/>
+				<xs:minLength value="1"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="receiver" nillable="false">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:minLength value="1"/>
+				<xs:maxLength value="50"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="action" nillable="false">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:minLength value="1"/>
+				<xs:maxLength value="50"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="information" nillable="false">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:minLength value="1"/>
+				<xs:maxLength value="200"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="message_version" nillable="false">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:pattern value="[0-9]{1,5}"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="message_date" nillable="false">
+		<xs:simpleType>
+			<xs:restriction base="xs:dateTime"/>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="message_hash" nillable="false">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:maxLength value="64"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="third_party_list_ref">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:maxLength value="50"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="third_party_issue_date" type="xs:date"/>
+	<xs:element name="exemption_channel">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="MANUAL"/>
+				<xs:enumeration value="ONLINE"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="impl_agency">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="TNT"/>
+				<xs:enumeration value="MFA"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="effective_date">
+		<xs:simpleType>
+			<xs:restriction base="xs:dateTime"/>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="expiry_date">
+		<xs:simpleType>
+			<xs:restriction base="xs:dateTime"/>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="tin">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:pattern value="[A-Z0-9]{11}"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="item_num">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:maxLength value="10"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="hs_code">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:pattern value="[0-9]{10}|[0-9]{8}|[0-9]{6}"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="item_desc">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:maxLength value="300"/>
+				<xs:minLength value="1"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="measure_unit">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="CTM"/>
+				<xs:enumeration value="GRM"/>
+				<xs:enumeration value="KGM"/>
+				<xs:enumeration value="KWH"/>
+				<xs:enumeration value="LTR"/>
+				<xs:enumeration value="MIL"/>
+				<xs:enumeration value="MTK"/>
+				<xs:enumeration value="MTQ"/>
+				<xs:enumeration value="MTR"/>
+				<xs:enumeration value="NPR"/>
+				<xs:enumeration value="UNT"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="unit_num">
+		<xs:simpleType>
+			<xs:restriction base="xs:decimal">
+				<xs:totalDigits value="12"/>
+				<xs:fractionDigits value="2"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="unit_currency">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:maxLength value="40"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="unit_value">
+		<xs:simpleType>
+			<xs:restriction base="xs:decimal">
+				<xs:totalDigits value="19"/>
+				<xs:fractionDigits value="2"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="is_im_duty_exm">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:pattern value="[Y,N]{1}"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="is_vat_exm">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:pattern value="[Y,N]{1}"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="is_excise_exm">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:pattern value="[Y,N]{1}"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="is_idf_exempt">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:pattern value="[Y,N]{1}"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="is_rdl_exempt">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:pattern value="[Y,N]{1}"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="duty_percent_exempted">
+		<xs:simpleType>
+			<xs:restriction base="xs:decimal">
+				<xs:totalDigits value="5"/>
+				<xs:fractionDigits value="4"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+</xs:schema>
+

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<response_message>
+   <message_header>
+      <module>Exemption</module>
+      <action>IPMIS01_Exemption_Master_List_Response</action>
+      <sender>iCMS</sender>
+      <receiver>IPMIS</receiver>
+      <information>iCMS Response Message.</information>
+      <message_version>1</message_version>
+      <message_date>2018-10-12T16:13:34</message_date>
+   </message_header>
+   <message_body>
+      <response_info>
+         <response_code>R1001</response_code>
+         <response_desc>Request Successfully.</response_desc>
+      </response_info>
+
+      <message>
+         <message_header>
+            <module>EXM</module>
+            <action>EXM_eProMIS_01_Biz-Res</action>
+            <sender>iCMS</sender>
+            <receiver>eProMIS</receiver>
+            <information>Business response for incoming EML data from eProMIS</information>
+            <message_hash />
+            <message_version>1</message_version>
+            <message_date>2018-10-12T16:13:34</message_date>
+         </message_header>
+         <message_body>
+            <error_info>
+               <response_code>R0001</response_code>
+               <response_desc>Load Exemption from eProMIS successfully.</response_desc>
+            </error_info>
+            <eml>
+               <eml_document_no>refTest22</eml_document_no>
+               <status>VALIDATED</status>
+               <eml_items>
+                  <item>
+                     <item_num>1</item_num>
+                     <eml_reason_code />
+                     <eml_reason_desc />	
+                     <eml_reason_detail />
+                  </item>
+                  <item>
+                     <item_num>4</item_num>
+                     <eml_reason_code />
+                     <eml_reason_desc />
+                     <eml_reason_detail />
+                  </item>
+               </eml_items>
+            </eml>
+         </message_body>
+      </message>
+
+      <message>
+         <message_header>
+            <module>EXM</module>
+            <action>EXM_eProMIS_01_Biz-Res</action>
+            <sender>iCMS</sender>
+            <receiver>eProMIS</receiver>
+            <information>Business response for incoming EML data from eProMIS</information>
+            <message_hash />
+            <message_version>1</message_version>
+            <message_date>2018-10-12T16:13:34</message_date>
+         </message_header>
+         <message_body>
+            <error_info>
+               <response_code>R0001</response_code>
+               <response_desc>Load Exemption from eProMIS successfully.</response_desc>
+            </error_info>
+            <eml>
+               <eml_document_no>refTest22</eml_document_no>
+               <status>VALIDATED</status>
+               <eml_items>
+                  <item>
+                     <item_num>1</item_num>
+                     <eml_reason_code />
+                     <eml_reason_desc />
+                     <eml_reason_detail />
+                  </item>
+                  <item>
+                     <item_num>4</item_num>
+                     <eml_reason_code />
+                     <eml_reason_desc />
+                     <eml_reason_detail />
+                  </item>
+               </eml_items>
+            </eml>
+         </message_body>
+      </message>
+
+      <message>
+         <message_header>
+            <module>EXM</module>
+            <action>EXM_eProMIS_01_Biz-Res</action>
+            <sender>iCMS</sender>
+            <receiver>eProMIS</receiver>
+            <information>Business response for incoming EML data from eProMIS</information>
+            <message_hash />
+            <message_version>1</message_version>
+            <message_date>2018-10-12T16:13:34</message_date>
+         </message_header>
+         <message_body>
+            <error_info>
+               <response_code>R0001</response_code>
+               <response_desc>Load Exemption from eProMIS successfully.</response_desc>
+            </error_info>
+            <eml>
+               <eml_document_no>refTest22</eml_document_no>
+               <status>VALIDATED</status>
+               <eml_items>
+                  <item>
+                     <item_num>1</item_num>
+                     <eml_reason_code />
+                     <eml_reason_desc />
+                     <eml_reason_detail />
+                  </item>
+                  <item>
+                     <item_num>4</item_num>
+                     <eml_reason_code />
+                     <eml_reason_desc />
+                     <eml_reason_detail />
+                  </item>
+               </eml_items>
+            </eml>
+         </message_body>
+      </message>
+   </message_body>
+</response_message>
