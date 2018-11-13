@@ -59,7 +59,7 @@ public class ICMSIntegrationMain {
 	}
 	
 	public static void testExm() {
-		ResponseMessage response = new ICMSExmManager().new Builder()
+		ResponseMessage response = ICMSExmManager.getBuilder()
 				.setEffectiveDate(new Date())
 				.setExpiryDate(new Date())
 				.setThirdPartyIssueDate(new Date())

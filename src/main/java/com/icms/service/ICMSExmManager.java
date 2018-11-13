@@ -15,6 +15,8 @@ import javax.xml.xpath.XPathExpressionException;
 
 import org.xml.sax.SAXException;
 
+import com.icms.service.ICMSDclManager.Builder;
+
 import ke.co.workpoint.extensions.util.ObjectBinder;
 import ke.co.workpoint.icms.model.exm.Eml;
 import ke.co.workpoint.icms.model.exm.EmlBody;
@@ -29,6 +31,10 @@ import ke.co.workpoint.icms.model.exm.response.ResponseMessage;
 public class ICMSExmManager extends SoapIntegrations{
 
 	public ICMSExmManager() {
+	}
+	
+	public static Builder getBuilder() {
+		return new ICMSExmManager().new Builder();
 	}
 	
 	public class Builder extends ServiceBuilder{

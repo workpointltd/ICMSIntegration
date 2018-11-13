@@ -6,9 +6,6 @@ import java.io.StringWriter;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Marshaller;
 
-import ke.co.workpoint.extensions.model.Exemption;
-import ke.co.workpoint.extensions.model.ExemptionStatusHeader;
-import ke.co.workpoint.extensions.model.ExemptionStatusResponseBody;
 import ke.co.workpoint.icms.model.decl.Dcl;
 import ke.co.workpoint.icms.model.decl.DclMessage;
 import ke.co.workpoint.icms.model.decl.DclMessageBody;
@@ -39,8 +36,6 @@ public class ObjectBinder {
 	public ObjectBinder() {
 		try{
 			jaxbContext = JAXBContext.newInstance(
-					Exemption.class, ExemptionStatusHeader.class, 
-					ExemptionStatusResponseBody.class, 
 					Eml.class,
 					EmlBody.class,
 					EmlHeader.class,
